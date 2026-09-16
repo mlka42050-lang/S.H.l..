@@ -2,535 +2,553 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>S.H.L | فروشگاه آینده</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.H.L Market | فروشگاه زنجیره‌ای</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
 body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#070711;
-  color:white;
-  overflow-x:hidden;
+    background:
+      radial-gradient(circle at 10% 10%,rgba(88,101,242,.22),transparent 28%),
+      radial-gradient(circle at 90% 30%,rgba(0,220,180,.16),transparent 25%),
+      linear-gradient(135deg,#07111f,#0d1729 45%,#111c31);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 body:before{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-  background:#7c3cff;
-  filter:blur(180px);
-  opacity:.18;
-  top:-150px;
-  right:-100px;
-  z-index:-1;
-}
-
-body:after{
-  content:"";
-  position:fixed;
-  width:400px;
-  height:400px;
-  background:#00e5ff;
-  filter:blur(180px);
-  opacity:.12;
-  bottom:-150px;
-  left:-100px;
-  z-index:-1;
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(45,212,191,.07);
+    filter:blur(80px);
+    top:-150px;
+    right:-150px;
+    pointer-events:none;
 }
 
 header{
-  width:100%;
-  padding:18px 7%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(7,7,17,.75);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(5,12,25,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-  font-size:27px;
-  font-weight:900;
-  letter-spacing:3px;
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .logo span{
-  color:#9b5cff;
+    color:#38e8c0;
 }
 
-nav{
-  display:flex;
-  gap:28px;
+.nav-links{
+    display:flex;
+    gap:24px;
 }
 
-nav a{
-  color:#aaa;
-  text-decoration:none;
-  transition:.3s;
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    transition:.3s;
 }
 
-nav a:hover{
-  color:white;
-}
-
-.header-buttons{
-  display:flex;
-  gap:10px;
-}
-
-.icon-btn{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  border:1px solid #29293c;
-  background:#11111d;
-  color:white;
-  cursor:pointer;
-  font-size:19px;
-}
-
-.hero{
-  min-height:650px;
-  padding:80px 7%;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;
-  gap:40px;
-}
-
-.hero-text small{
-  color:#9b5cff;
-  font-weight:bold;
-  font-size:15px;
-}
-
-.hero h1{
-  font-size:clamp(45px,6vw,82px);
-  line-height:1.05;
-  margin:20px 0;
-  font-weight:900;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#a66cff,#00e5ff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  color:#a7a7b8;
-  max-width:550px;
-  line-height:2;
-  font-size:17px;
-}
-
-.buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 25px;
-  border-radius:15px;
-  border:0;
-  cursor:pointer;
-  color:white;
-  font-weight:bold;
-  font-size:15px;
-}
-
-.btn-main{
-  background:linear-gradient(135deg,#8b45ff,#5d25d9);
-  box-shadow:0 10px 35px rgba(130,60,255,.3);
-}
-
-.btn-dark{
-  background:#12121e;
-  border:1px solid #29293c;
-}
-
-.character-box{
-  height:500px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-
-.circle{
-  width:390px;
-  height:390px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 35%,#34344c,#11111e 60%,#080810);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:
-    0 0 100px rgba(133,70,255,.3),
-    inset 0 0 80px rgba(0,229,255,.08);
-  position:relative;
-  animation:float 5s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-}
-
-.avatar{
-  position:absolute;
-  width:190px;
-  height:270px;
-  background:linear-gradient(145deg,#29293d,#10101b);
-  border-radius:95px 95px 55px 55px;
-  top:80px;
-  left:100px;
-  box-shadow:0 25px 50px #000;
-}
-
-.head{
-  width:125px;
-  height:135px;
-  background:linear-gradient(145deg,#e0a77f,#9b5e43);
-  border-radius:60px 60px 50px 50px;
-  position:absolute;
-  top:-55px;
-  left:32px;
-}
-
-.hair{
-  width:130px;
-  height:70px;
-  background:#111;
-  border-radius:70px 70px 25px 25px;
-  position:absolute;
-  top:-25px;
-  left:28px;
-  transform:rotate(-4deg);
-}
-
-.eye{
-  width:10px;
-  height:7px;
-  background:#111;
-  border-radius:50%;
-  position:absolute;
-  top:55px;
-}
-
-.eye.one{left:32px}
-.eye.two{right:32px}
-
-.mouth{
-  width:35px;
-  height:7px;
-  border-bottom:3px solid #562f2b;
-  position:absolute;
-  bottom:28px;
-  left:45px;
-  border-radius:50%;
-}
-
-.neon{
-  position:absolute;
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  border:1px solid #00e5ff;
-  box-shadow:0 0 25px #00e5ff;
-  opacity:.5;
-  top:35px;
-  right:35px;
-}
-
-.products-section{
-  padding:70px 7%;
-}
-
-.section-title{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  margin-bottom:35px;
-}
-
-.section-title h2{
-  font-size:38px;
-}
-
-.section-title p{
-  color:#888899;
-  margin-top:10px;
-}
-
-.search{
-  width:280px;
-  padding:14px 18px;
-  border-radius:14px;
-  border:1px solid #29293c;
-  outline:none;
-  background:#11111c;
-  color:white;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.card{
-  background:linear-gradient(145deg,#12121f,#0d0d17);
-  border:1px solid #242438;
-  border-radius:24px;
-  overflow:hidden;
-  transition:.35s;
-  position:relative;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  border-color:#7642e9;
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
-}
-
-.product-image{
-  height:230px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:100px;
-  background:
-    radial-gradient(circle,#252542,#11111d 65%);
-  position:relative;
-}
-
-.badge{
-  position:absolute;
-  top:14px;
-  right:14px;
-  background:#8b45ff;
-  padding:7px 11px;
-  border-radius:10px;
-  font-size:11px;
-}
-
-.card-content{
-  padding:20px;
-}
-
-.card h3{
-  font-size:17px;
-  margin-bottom:9px;
-}
-
-.card p{
-  color:#777789;
-  font-size:13px;
-  line-height:1.8;
-}
-
-.price{
-  margin-top:17px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.price strong{
-  font-size:18px;
-  color:#fff;
-}
-
-.buy{
-  border:0;
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  background:#7d3cff;
-  color:white;
-  font-size:19px;
-  cursor:pointer;
-}
-
-.features{
-  padding:50px 7%;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.feature{
-  padding:28px;
-  background:#10101b;
-  border:1px solid #242438;
-  border-radius:22px;
-}
-
-.feature-icon{
-  font-size:35px;
-  margin-bottom:15px;
-}
-
-.feature h3{
-  margin-bottom:8px;
-}
-
-.feature p{
-  color:#888899;
-  line-height:1.8;
-  font-size:14px;
-}
-
-footer{
-  margin-top:50px;
-  padding:40px 7%;
-  border-top:1px solid #20202f;
-  display:flex;
-  justify-content:space-between;
-  color:#777789;
+.nav-links a:hover{
+    color:#38e8c0;
 }
 
 .cart{
-  position:fixed;
-  top:0;
-  left:-390px;
-  width:360px;
-  max-width:90%;
-  height:100vh;
-  background:#10101b;
-  border-right:1px solid #29293c;
-  z-index:200;
-  padding:25px;
-  transition:.4s;
-  box-shadow:20px 0 50px rgba(0,0,0,.5);
+    background:#38e8c0;
+    color:#06111c;
+    border:none;
+    padding:11px 17px;
+    border-radius:14px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.cart.active{
-  left:0;
+.hero{
+    max-width:1250px;
+    margin:auto;
+    min-height:480px;
+    padding:70px 20px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:40px;
 }
 
-.cart-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:30px;
+.hero h1{
+    font-size:clamp(38px,6vw,70px);
+    line-height:1.15;
+    margin-bottom:20px;
 }
 
-.close{
-  background:none;
-  color:white;
-  border:0;
-  font-size:25px;
-  cursor:pointer;
+.hero h1 span{
+    color:#38e8c0;
 }
 
-.cart-items{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.hero p{
+    color:#b9c3d3;
+    font-size:18px;
+    line-height:2;
+    max-width:650px;
+}
+
+.hero-buttons{
+    margin-top:28px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:14px 24px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.primary{
+    background:#38e8c0;
+    color:#07121d;
+}
+
+.secondary{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+/* 3D CHARACTER */
+
+.scene{
+    height:350px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:900px;
+}
+
+.platform{
+    position:absolute;
+    width:270px;
+    height:80px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#38e8c0,#5265ff);
+    transform:rotateX(65deg);
+    box-shadow:0 35px 60px rgba(56,232,192,.25);
+}
+
+.character{
+    position:relative;
+    width:145px;
+    height:210px;
+    transform-style:preserve-3d;
+    animation:float 3s ease-in-out infinite;
+    z-index:2;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotateY(-8deg)}
+    50%{transform:translateY(-22px) rotateY(8deg)}
+}
+
+.head{
+    width:100px;
+    height:100px;
+    border-radius:45% 45% 42% 42%;
+    background:linear-gradient(145deg,#ffd7b5,#e9a77d);
+    margin:auto;
+    position:relative;
+    box-shadow:inset -10px -12px 20px rgba(0,0,0,.12);
+}
+
+.eye{
+    position:absolute;
+    width:13px;
+    height:17px;
+    background:#152033;
+    border-radius:50%;
+    top:42px;
+}
+
+.eye.left{left:27px}
+.eye.right{right:27px}
+
+.smile{
+    position:absolute;
+    width:32px;
+    height:15px;
+    border-bottom:4px solid #263449;
+    border-radius:50%;
+    bottom:22px;
+    left:34px;
+}
+
+.body{
+    width:125px;
+    height:105px;
+    margin:-3px auto 0;
+    background:linear-gradient(145deg,#5265ff,#2737a7);
+    border-radius:35px 35px 25px 25px;
+    position:relative;
+}
+
+.arm{
+    width:28px;
+    height:82px;
+    background:#5265ff;
+    border-radius:20px;
+    position:absolute;
+    top:12px;
+}
+
+.arm.left{
+    left:-20px;
+    transform:rotate(25deg);
+}
+
+.arm.right{
+    right:-20px;
+    transform:rotate(-25deg);
+}
+
+.badge{
+    position:absolute;
+    top:34px;
+    left:37px;
+    width:52px;
+    height:35px;
+    background:#fff;
+    color:#2737a7;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:12px;
+}
+
+/* PRODUCTS */
+
+.section{
+    max-width:1250px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.section-title{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:25px;
+    gap:20px;
+}
+
+.section-title h2{
+    font-size:31px;
+}
+
+.section-title p{
+    color:#8f9caf;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+    padding:15px 18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.07);
+    color:white;
+    outline:none;
+}
+
+.search::placeholder{
+    color:#8994a7;
+}
+
+.filter{
+    padding:14px 18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.1);
+    background:#131f34;
+    color:white;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.065);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;
+    overflow:hidden;
+    position:relative;
+    transition:.35s;
+    backdrop-filter:blur(10px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(56,232,192,.4);
+    box-shadow:0 25px 50px rgba(0,0,0,.25);
+}
+
+.product-img{
+    height:220px;
+    background:#f4f6f8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:.5s;
+}
+
+.card:hover .product-img img{
+    transform:scale(1.08);
+}
+
+.info{
+    padding:18px;
+}
+
+.tag{
+    display:inline-block;
+    background:rgba(56,232,192,.12);
+    color:#38e8c0;
+    border-radius:20px;
+    padding:6px 10px;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+.info h3{
+    font-size:17px;
+    margin-bottom:9px;
+}
+
+.description{
+    color:#9da8ba;
+    font-size:13px;
+    line-height:1.8;
+    height:45px;
+}
+
+.rating{
+    color:#ffd166;
+    margin:10px 0;
+    font-size:14px;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.price small{
+    font-size:11px;
+    color:#8994a7;
+}
+
+.add{
+    border:none;
+    background:#38e8c0;
+    color:#07121d;
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.add:hover{
+    transform:scale(1.1);
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature{
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.feature-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:#9ca7b9;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* CART */
+
+.cart-panel{
+    position:fixed;
+    top:0;
+    left:-400px;
+    width:360px;
+    max-width:90%;
+    height:100vh;
+    background:#0c1628;
+    z-index:500;
+    padding:25px;
+    box-shadow:20px 0 50px rgba(0,0,0,.4);
+    transition:.4s;
+}
+
+.cart-panel.active{
+    left:0;
+}
+
+.cart-panel h2{
+    margin-bottom:25px;
 }
 
 .cart-item{
-  padding:14px;
-  background:#171724;
-  border-radius:14px;
-  display:flex;
-  justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:20px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
 }
 
 .total{
-  position:absolute;
-  bottom:25px;
-  right:25px;
-  left:25px;
-  padding:20px;
-  background:#171724;
-  border-radius:18px;
+    margin-top:25px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.checkout{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#38e8c0;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    padding:40px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#8994a7;
 }
 
 @media(max-width:1000px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
 
-  .hero p{
-    margin:auto;
-  }
+    .hero p{
+        margin:auto;
+    }
 
-  .buttons{
-    justify-content:center;
-  }
-
-  nav{
-    display:none;
-  }
+    .hero-buttons{
+        justify-content:center;
+    }
 }
 
 @media(max-width:600px){
-  header{
-    padding:15px 5%;
-  }
+    .nav-links{
+        display:none;
+    }
 
-  .hero{
-    padding:50px 5%;
-  }
+    .products{
+        grid-template-columns:1fr;
+    }
 
-  .circle{
-    width:300px;
-    height:300px;
-  }
+    .features{
+        grid-template-columns:1fr;
+    }
 
-  .avatar{
-    transform:scale(.75);
-    transform-origin:center;
-    left:55px;
-    top:40px;
-  }
-
-  .products-section{
-    padding:50px 5%;
-  }
-
-  .section-title{
-    display:block;
-  }
-
-  .search{
-    width:100%;
-    margin-top:20px;
-  }
-
-  .products{
-    grid-template-columns:1fr;
-  }
-
-  .features{
-    grid-template-columns:1fr;
-    padding:40px 5%;
-  }
-
-  footer{
-    flex-direction:column;
-    gap:15px;
-  }
+    .hero{
+        padding-top:40px;
+    }
 }
 </style>
 </head>
@@ -538,352 +556,495 @@ footer{
 <body>
 
 <header>
-  <div class="logo">S.<span>H</span>.L</div>
+<div class="nav">
 
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#products">محصولات</a>
-    <a href="#features">امکانات</a>
-  </nav>
+<div class="logo">
+S.H.<span>L</span>
+</div>
 
-  <div class="header-buttons">
-    <button class="icon-btn" onclick="openCart()">🛒</button>
-  </div>
+<div class="nav-links">
+<a href="#home">خانه</a>
+<a href="#products">محصولات</a>
+<a href="#services">خدمات</a>
+<a href="#contact">تماس</a>
+</div>
+
+<button class="cart" onclick="openCart()">
+🛒 سبد خرید <span id="cartCount">0</span>
+</button>
+
+</div>
 </header>
+
 
 <section class="hero" id="home">
 
-  <div class="hero-text">
-    <small>WELCOME TO S.H.L</small>
+<div>
+<h1>
+فروشگاه نسل جدید
+<br>
+<span>خرید هوشمند</span>
+</h1>
 
-    <h1>
-      دنیای جدید<br>
-      <span>از همین‌جا شروع می‌شود.</span>
-    </h1>
+<p>
+یک تجربه مدرن برای فروشگاه‌های زنجیره‌ای؛
+نمایش حرفه‌ای محصولات، جست‌وجوی سریع،
+جزئیات کالا، سبد خرید و طراحی واکنش‌گرا برای موبایل و کامپیوتر.
+</p>
 
-    <p>
-      جدیدترین گجت‌ها، لوازم دیجیتال و محصولات خاص
-      در یک فروشگاه مدرن و متفاوت.
-    </p>
+<div class="hero-buttons">
+<button class="btn primary" onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">
+مشاهده محصولات
+</button>
 
-    <div class="buttons">
-      <button class="btn btn-main" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-        مشاهده محصولات
-      </button>
+<button class="btn secondary" onclick="openCart()">
+مشاهده سبد خرید
+</button>
+</div>
+</div>
 
-      <button class="btn btn-dark" onclick="openCart()">
-        سبد خرید
-      </button>
-    </div>
-  </div>
 
-  <div class="character-box">
-    <div class="circle">
-      <div class="neon"></div>
+<div class="scene">
 
-      <div class="avatar">
-        <div class="head">
-          <div class="hair"></div>
-          <div class="eye one"></div>
-          <div class="eye two"></div>
-          <div class="mouth"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="platform"></div>
 
-</section>
+<div class="character">
 
-<section class="products-section" id="products">
+<div class="head">
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="smile"></div>
+</div>
 
-  <div class="section-title">
-    <div>
-      <h2>محصولات منتخب</h2>
-      <p>محصولاتی که ارزش دیدن دارند</p>
-    </div>
-
-    <input
-      class="search"
-      id="search"
-      placeholder="جستجوی محصول..."
-      oninput="searchProducts()"
-    >
-  </div>
-
-  <div class="products" id="productsGrid"></div>
-
-</section>
-
-<section class="features" id="features">
-
-  <div class="feature">
-    <div class="feature-icon">⚡</div>
-    <h3>تجربه سریع</h3>
-    <p>
-      طراحی سریع و روان برای استفاده راحت در موبایل و کامپیوتر.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🛡️</div>
-    <h3>خرید مطمئن</h3>
-    <p>
-      ساختار ساده و قابل اعتماد برای نمایش محصولات و مدیریت سفارش.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🚀</div>
-    <h3>طراحی آینده‌نگر</h3>
-    <p>
-      ظاهر مدرن با افکت‌های نئونی و طراحی مخصوص برند S.H.L.
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  <div>© 2026 S.H.L</div>
-  <div>ساخته شده برای یک تجربه متفاوت</div>
-</footer>
-
-<div class="cart" id="cart">
-
-  <div class="cart-head">
-    <h2>سبد خرید</h2>
-    <button class="close" onclick="closeCart()">×</button>
-  </div>
-
-  <div class="cart-items" id="cartItems">
-    <p style="color:#777">سبد خرید خالی است.</p>
-  </div>
-
-  <div class="total">
-    <div style="display:flex;justify-content:space-between">
-      <span>مجموع</span>
-      <strong id="total">۰ تومان</strong>
-    </div>
-  </div>
+<div class="body">
+<div class="arm left"></div>
+<div class="arm right"></div>
+<div class="badge">S.H.L</div>
+</div>
 
 </div>
 
+</div>
+
+</section>
+
+
+<section class="section" id="products">
+
+<div class="section-title">
+
+<div>
+<h2>محصولات منتخب</h2>
+<p>نمونه طراحی فروشگاه زنجیره‌ای</p>
+</div>
+
+</div>
+
+
+<div class="controls">
+
+<input
+class="search"
+id="search"
+placeholder="🔎 جستجوی محصول..."
+oninput="searchProducts()">
+
+<select class="filter" id="category" onchange="filterProducts()">
+<option value="all">همه دسته‌ها</option>
+<option value="tech">کالای دیجیتال</option>
+<option value="home">خانه</option>
+<option value="food">خوراکی</option>
+<option value="fashion">پوشاک</option>
+</select>
+
+</div>
+
+
+<div class="products" id="productList">
+
+<!-- PRODUCT 1 -->
+
+<div class="card" data-category="tech" data-name="هدفون بی سیم">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">کالای دیجیتال</span>
+
+<h3>هدفون بی‌سیم حرفه‌ای</h3>
+
+<p class="description">
+صدای شفاف، طراحی راحت و مناسب استفاده روزانه.
+</p>
+
+<div class="rating">★★★★★ 4.8</div>
+
+<div class="price-row">
+<div class="price">۳,۹۹۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('هدفون بی‌سیم',3990000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="card" data-category="tech" data-name="ساعت هوشمند">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">کالای دیجیتال</span>
+
+<h3>ساعت هوشمند</h3>
+
+<p class="description">
+طراحی مدرن با نمایشگر باکیفیت و امکانات هوشمند.
+</p>
+
+<div class="rating">★★★★★ 4.7</div>
+
+<div class="price-row">
+<div class="price">۵,۴۹۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('ساعت هوشمند',5490000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="card" data-category="home" data-name="دوربین">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">لوازم خانه</span>
+
+<h3>دوربین دیجیتال</h3>
+
+<p class="description">
+دوربین مناسب تولید محتوا و ثبت تصاویر باکیفیت.
+</p>
+
+<div class="rating">★★★★☆ 4.6</div>
+
+<div class="price-row">
+<div class="price">۲۴,۹۰۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('دوربین دیجیتال',24900000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="card" data-category="fashion" data-name="کفش ورزشی">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">پوشاک</span>
+
+<h3>کفش ورزشی</h3>
+
+<p class="description">
+طراحی سبک و مناسب استفاده روزمره و ورزشی.
+</p>
+
+<div class="rating">★★★★★ 4.9</div>
+
+<div class="price-row">
+<div class="price">۳,۲۹۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('کفش ورزشی',3290000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="card" data-category="food" data-name="قهوه">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">خوراکی</span>
+
+<h3>قهوه تازه</h3>
+
+<p class="description">
+قهوه تازه‌برشت با عطر و طعم مناسب برای مصرف روزانه.
+</p>
+
+<div class="rating">★★★★★ 4.8</div>
+
+<div class="price-row">
+<div class="price">۴۹۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('قهوه تازه',490000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 6 -->
+
+<div class="card" data-category="home" data-name="عینک">
+
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="info">
+
+<span class="tag">اکسسوری</span>
+
+<h3>عینک آفتابی</h3>
+
+<p class="description">
+فریم مدرن با طراحی مناسب استفاده روزانه.
+</p>
+
+<div class="rating">★★★★☆ 4.5</div>
+
+<div class="price-row">
+<div class="price">۱,۸۹۰,۰۰۰ <small>تومان</small></div>
+<button class="add" onclick="addToCart('عینک آفتابی',1890000)">+</button>
+</div>
+
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<section class="section" id="services">
+
+<div class="section-title">
+<div>
+<h2>چرا این فروشگاه؟</h2>
+<p>بخش‌هایی که برای ارائه نمونه پروژه طراحی شده‌اند</p>
+</div>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>سرعت بالا</h3>
+<p>
+طراحی سبک و واکنش‌گرا برای موبایل، تبلت و کامپیوتر.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🔎</div>
+<h3>جستجوی هوشمند</h3>
+<p>
+کاربر می‌تواند محصولات را سریع پیدا و بر اساس دسته‌بندی مرتب کند.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🛒</div>
+<h3>سبد خرید</h3>
+<p>
+افزودن محصولات به سبد خرید و محاسبه مجموع سفارش به‌صورت لحظه‌ای.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer id="contact">
+S.H.L Market © 2026
+<br><br>
+نمونه اولیه طراحی فروشگاه زنجیره‌ای
+</footer>
+
+
+<!-- CART -->
+
+<div class="cart-panel" id="cartPanel">
+
+<button class="close" onclick="closeCart()">×</button>
+
+<h2>🛒 سبد خرید</h2>
+
+<div id="cartItems">
+سبد خرید خالی است.
+</div>
+
+<div class="total">
+مجموع:
+<span id="total">۰</span>
+تومان
+</div>
+
+<button class="checkout" onclick="checkout()">
+ادامه ثبت سفارش
+</button>
+
+</div>
+
+
 <script>
 
-const products = [
-
-{
- name:"هدفون S.H.L X1",
- desc:"هدفون بی‌سیم با طراحی آینده‌نگر",
- price:2490000,
- icon:"🎧"
-},
-
-{
- name:"ساعت هوشمند S.H.L",
- desc:"ساعت هوشمند با ظاهر مدرن",
- price:3290000,
- icon:"⌚"
-},
-
-{
- name:"کنسول دستی X",
- desc:"کنسول کوچک برای بازی‌های جذاب",
- price:4890000,
- icon:"🎮"
-},
-
-{
- name:"کیبورد مکانیکی RGB",
- desc:"کیبورد مخصوص گیم و کار",
- price:2190000,
- icon:"⌨️"
-},
-
-{
- name:"اسپیکر S.H.L Boom",
- desc:"صدای قدرتمند در ابعاد کوچک",
- price:1790000,
- icon:"🔊"
-},
-
-{
- name:"ماوس گیمینگ",
- desc:"ماوس سریع و دقیق برای بازی",
- price:1290000,
- icon:"🖱️"
-},
-
-{
- name:"چراغ هوشمند",
- desc:"نورپردازی جذاب برای اتاق",
- price:890000,
- icon:"💡"
-},
-
-{
- name:"پاوربانک Ultra",
- desc:"شارژ سریع برای استفاده روزانه",
- price:1590000,
- icon:"🔋"
-}
-
-];
-
 let cart=[];
+let total=0;
 
-function formatPrice(number){
- return number.toLocaleString("fa-IR")+" تومان";
+function addToCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    total += price;
+
+    document.getElementById("cartCount").innerText=cart.length;
+
+    renderCart();
+
+    document.getElementById("cartPanel").classList.add("active");
 }
 
-function showProducts(list=products){
 
- const grid=document.getElementById("productsGrid");
+function renderCart(){
 
- grid.innerHTML="";
+    const box=document.getElementById("cartItems");
 
- list.forEach((product,index)=>{
+    if(cart.length===0){
+        box.innerHTML="سبد خرید خالی است.";
+        return;
+    }
 
-   grid.innerHTML+=`
+    box.innerHTML="";
 
-   <div class="card">
+    cart.forEach((item,index)=>{
 
-     <div class="product-image">
+        const div=document.createElement("div");
 
-       <span class="badge">
-         ویژه
-       </span>
+        div.className="cart-item";
 
-       ${product.icon}
+        div.innerHTML=`
+        <strong>${item.name}</strong>
+        <br>
+        <span>${item.price.toLocaleString("fa-IR")} تومان</span>
+        <br>
+        <button
+        onclick="removeItem(${index})"
+        style="margin-top:8px;background:#ff5d73;color:white;border:0;padding:6px 10px;border-radius:8px;cursor:pointer">
+        حذف
+        </button>
+        `;
 
-     </div>
+        box.appendChild(div);
 
-     <div class="card-content">
+    });
 
-       <h3>${product.name}</h3>
-
-       <p>${product.desc}</p>
-
-       <div class="price">
-
-         <strong>
-           ${formatPrice(product.price)}
-         </strong>
-
-         <button
-           class="buy"
-           onclick="addCart(${index})">
-           +
-         </button>
-
-       </div>
-
-     </div>
-
-   </div>
-
-   `;
-
- });
-
+    document.getElementById("total").innerText=
+        total.toLocaleString("fa-IR");
 }
+
+
+function removeItem(index){
+
+    total -= cart[index].price;
+
+    cart.splice(index,1);
+
+    document.getElementById("cartCount").innerText=cart.length;
+
+    renderCart();
+}
+
+
+function openCart(){
+    document.getElementById("cartPanel").classList.add("active");
+}
+
+
+function closeCart(){
+    document.getElementById("cartPanel").classList.remove("active");
+}
+
+
+function checkout(){
+
+    if(cart.length===0){
+        alert("سبد خرید شما خالی است.");
+        return;
+    }
+
+    alert(
+        "این نسخه نمایشی است.\n\n" +
+        "در نسخه واقعی می‌توان درگاه پرداخت، حساب کاربری، آدرس و ثبت سفارش را اضافه کرد."
+    );
+}
+
 
 function searchProducts(){
 
- const value=document
- .getElementById("search")
- .value
- .trim()
- .toLowerCase();
+    const value=
+        document.getElementById("search").value.toLowerCase();
 
- const result=products.filter(product=>
-   product.name.toLowerCase().includes(value) ||
-   product.desc.toLowerCase().includes(value)
- );
+    document.querySelectorAll(".card").forEach(card=>{
 
- showProducts(result);
+        const name=
+            card.dataset.name.toLowerCase();
 
+        card.style.display=
+            name.includes(value) ? "" : "none";
+
+    });
 }
 
-function addCart(index){
 
- cart.push(products[index]);
+function filterProducts(){
 
- updateCart();
+    const value=
+        document.getElementById("category").value;
 
- openCart();
+    document.querySelectorAll(".card").forEach(card=>{
 
+        if(value==="all" ||
+           card.dataset.category===value){
+
+            card.style.display="";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
 }
-
-function updateCart(){
-
- const box=document.getElementById("cartItems");
- const total=document.getElementById("total");
-
- if(cart.length===0){
-
-   box.innerHTML=
-   '<p style="color:#777">سبد خرید خالی است.</p>';
-
-   total.innerText="۰ تومان";
-
-   return;
- }
-
- let sum=0;
-
- box.innerHTML="";
-
- cart.forEach((item,index)=>{
-
-   sum+=item.price;
-
-   box.innerHTML+=`
-
-   <div class="cart-item">
-
-     <span>${item.icon} ${item.name}</span>
-
-     <button
-       onclick="removeCart(${index})"
-       style="background:none;border:0;color:#ff5577;cursor:pointer">
-       ×
-     </button>
-
-   </div>
-
-   `;
-
- });
-
- total.innerText=formatPrice(sum);
-
-}
-
-function removeCart(index){
-
- cart.splice(index,1);
-
- updateCart();
-
-}
-
-function openCart(){
-
- document
- .getElementById("cart")
- .classList.add("active");
-
-}
-
-function closeCart(){
-
- document
- .getElementById("cart")
- .classList.remove("active");
-
-}
-
-showProducts();
 
 </script>
 
