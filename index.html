@@ -1,642 +1,1623 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S.H.L Market | فروشگاه زنجیره‌ای</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>S.H.L Market</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Tahoma,Arial,sans-serif;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:
-      radial-gradient(circle at 10% 10%,rgba(88,101,242,.22),transparent 28%),
-      radial-gradient(circle at 90% 30%,rgba(0,220,180,.16),transparent 25%),
-      linear-gradient(135deg,#07111f,#0d1729 45%,#111c31);
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
     color:white;
+
     min-height:100vh;
+
     overflow-x:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(0,245,200,.16),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 85% 70%,
+        rgba(75,80,255,.18),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #050816,
+        #0a1225,
+        #101a35
+    );
 }
 
-body:before{
-    content:"";
+
+/* =========================
+   BACKGROUND LIGHTS
+========================= */
+
+.light{
+
     position:fixed;
-    width:500px;
-    height:500px;
+
+    width:260px;
+    height:260px;
+
     border-radius:50%;
-    background:rgba(45,212,191,.07);
+
     filter:blur(80px);
-    top:-150px;
-    right:-150px;
+
+    opacity:.25;
+
     pointer-events:none;
+
+    z-index:0;
+
+    animation:
+    lightMove 8s infinite alternate ease-in-out;
 }
+
+.light1{
+
+    background:#00f5c8;
+
+    top:-80px;
+    left:-80px;
+}
+
+.light2{
+
+    background:#5b5cff;
+
+    right:-80px;
+    bottom:-80px;
+
+    animation-delay:2s;
+}
+
+@keyframes lightMove{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(100px,-50px) scale(1.3);
+    }
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
+
     position:sticky;
+
     top:0;
+
     z-index:100;
-    background:rgba(5,12,25,.75);
+
+    background:
+    rgba(4,10,23,.78);
+
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.1);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.09);
 }
 
 .nav{
+
     max-width:1250px;
+
     margin:auto;
-    padding:16px 20px;
+
+    padding:17px 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
 .logo{
-    font-size:27px;
+
+    font-size:28px;
+
     font-weight:900;
+
     letter-spacing:2px;
 }
 
 .logo span{
-    color:#38e8c0;
+
+    color:#00f5c8;
+
+    text-shadow:
+    0 0 20px #00f5c8;
 }
 
 .nav-links{
+
     display:flex;
-    gap:24px;
+
+    gap:25px;
 }
 
 .nav-links a{
-    color:#ddd;
+
+    color:#dce2ed;
+
     text-decoration:none;
+
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#38e8c0;
+
+    color:#00f5c8;
 }
 
-.cart{
-    background:#38e8c0;
-    color:#06111c;
+
+/* CART BUTTON */
+
+.cart-button{
+
     border:none;
-    padding:11px 17px;
+
+    padding:12px 17px;
+
     border-radius:14px;
+
+    background:#00f5c8;
+
+    color:#031018;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.3s;
 }
+
+.cart-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 30px #00f5c844;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
+
+    position:relative;
+
+    z-index:1;
+
     max-width:1250px;
+
     margin:auto;
-    min-height:480px;
-    padding:70px 20px;
+
+    min-height:650px;
+
+    padding:
+    60px 20px;
+
     display:grid;
-    grid-template-columns:1.2fr .8fr;
+
+    grid-template-columns:
+    1.1fr .9fr;
+
     align-items:center;
+
     gap:40px;
 }
 
-.hero h1{
-    font-size:clamp(38px,6vw,70px);
-    line-height:1.15;
-    margin-bottom:20px;
-}
+.hero-content{
 
-.hero h1 span{
-    color:#38e8c0;
-}
-
-.hero p{
-    color:#b9c3d3;
-    font-size:18px;
-    line-height:2;
-    max-width:650px;
-}
-
-.hero-buttons{
-    margin-top:28px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:none;
-    padding:14px 24px;
-    border-radius:14px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-}
-
-.primary{
-    background:#38e8c0;
-    color:#07121d;
-}
-
-.secondary{
-    background:rgba(255,255,255,.08);
-    color:white;
-    border:1px solid rgba(255,255,255,.12);
-}
-
-/* 3D CHARACTER */
-
-.scene{
-    height:350px;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    perspective:900px;
-}
-
-.platform{
-    position:absolute;
-    width:270px;
-    height:80px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#38e8c0,#5265ff);
-    transform:rotateX(65deg);
-    box-shadow:0 35px 60px rgba(56,232,192,.25);
-}
-
-.character{
-    position:relative;
-    width:145px;
-    height:210px;
-    transform-style:preserve-3d;
-    animation:float 3s ease-in-out infinite;
-    z-index:2;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0) rotateY(-8deg)}
-    50%{transform:translateY(-22px) rotateY(8deg)}
-}
-
-.head{
-    width:100px;
-    height:100px;
-    border-radius:45% 45% 42% 42%;
-    background:linear-gradient(145deg,#ffd7b5,#e9a77d);
-    margin:auto;
-    position:relative;
-    box-shadow:inset -10px -12px 20px rgba(0,0,0,.12);
-}
-
-.eye{
-    position:absolute;
-    width:13px;
-    height:17px;
-    background:#152033;
-    border-radius:50%;
-    top:42px;
-}
-
-.eye.left{left:27px}
-.eye.right{right:27px}
-
-.smile{
-    position:absolute;
-    width:32px;
-    height:15px;
-    border-bottom:4px solid #263449;
-    border-radius:50%;
-    bottom:22px;
-    left:34px;
-}
-
-.body{
-    width:125px;
-    height:105px;
-    margin:-3px auto 0;
-    background:linear-gradient(145deg,#5265ff,#2737a7);
-    border-radius:35px 35px 25px 25px;
-    position:relative;
-}
-
-.arm{
-    width:28px;
-    height:82px;
-    background:#5265ff;
-    border-radius:20px;
-    position:absolute;
-    top:12px;
-}
-
-.arm.left{
-    left:-20px;
-    transform:rotate(25deg);
-}
-
-.arm.right{
-    right:-20px;
-    transform:rotate(-25deg);
+    text-align:right;
 }
 
 .badge{
-    position:absolute;
-    top:34px;
-    left:37px;
-    width:52px;
-    height:35px;
-    background:#fff;
-    color:#2737a7;
-    border-radius:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:900;
-    font-size:12px;
+
+    display:inline-block;
+
+    padding:9px 17px;
+
+    border:
+    1px solid #00f5c855;
+
+    background:#00f5c811;
+
+    color:#00f5c8;
+
+    border-radius:30px;
+
+    margin-bottom:22px;
+
+    animation:
+    badgePulse 2.5s infinite;
 }
 
-/* PRODUCTS */
+@keyframes badgePulse{
+
+    50%{
+        box-shadow:
+        0 0 25px #00f5c822;
+    }
+}
+
+.hero h1{
+
+    font-size:
+    clamp(40px,6vw,75px);
+
+    line-height:1.15;
+
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+
+    color:#00f5c8;
+
+    text-shadow:
+    0 0 35px #00f5c866;
+}
+
+.hero p{
+
+    max-width:650px;
+
+    color:#aab5c9;
+
+    font-size:18px;
+
+    line-height:2;
+
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   MAIN BUTTON
+========================= */
+
+.shop-button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:17px 30px;
+
+    border:none;
+
+    border-radius:17px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00f5c8,
+        #00a8ff
+    );
+
+    color:#031018;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 25px #00f5c844,
+    0 15px 35px #0008;
+
+    transition:.3s;
+}
+
+.shop-button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 40px #00f5c888,
+    0 20px 45px #0009;
+}
+
+.shop-button:active{
+
+    transform:scale(.96);
+}
+
+.shop-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:
+    buttonShine 3s infinite;
+}
+
+@keyframes buttonShine{
+
+    0%{
+        left:-120%;
+    }
+
+    45%,100%{
+        left:150%;
+    }
+}
+
+.arrow{
+
+    font-size:23px;
+
+    transition:.3s;
+}
+
+.shop-button:hover .arrow{
+
+    transform:
+    translateX(-8px);
+}
+
+
+/* =========================
+   3D CHARACTER AREA
+========================= */
+
+.character-area{
+
+    position:relative;
+
+    height:470px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1000px;
+}
+
+
+/* GLOW */
+
+.character-glow{
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:#00f5c8;
+
+    filter:blur(80px);
+
+    opacity:.22;
+
+    animation:
+    glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse{
+
+    from{
+        transform:scale(.8);
+        opacity:.15;
+    }
+
+    to{
+        transform:scale(1.25);
+        opacity:.35;
+    }
+}
+
+
+/* CHARACTER */
+
+.character{
+
+    width:170px;
+
+    height:300px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    z-index:5;
+
+    animation:
+    characterFloat 3.5s
+    ease-in-out
+    infinite;
+
+    transition:
+    transform .25s ease;
+}
+
+@keyframes characterFloat{
+
+    0%,100%{
+
+        transform:
+        translateY(0)
+        rotateY(-8deg);
+    }
+
+    50%{
+
+        transform:
+        translateY(-25px)
+        rotateY(8deg);
+    }
+}
+
+
+/* HEAD */
+
+.head{
+
+    position:absolute;
+
+    width:130px;
+
+    height:130px;
+
+    left:20px;
+
+    top:0;
+
+    border-radius:
+    45%
+    45%
+    48%
+    48%;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ffddc5,
+        #e7a37d
+    );
+
+    box-shadow:
+    inset -13px -15px 25px #a85f4155,
+    15px 20px 35px #0005;
+
+    transform:
+    translateZ(35px);
+}
+
+
+/* HAIR */
+
+.hair{
+
+    position:absolute;
+
+    width:124px;
+
+    height:53px;
+
+    left:3px;
+
+    top:-5px;
+
+    border-radius:
+    65%
+    65%
+    25%
+    25%;
+
+    background:
+    linear-gradient(
+        145deg,
+        #26354c,
+        #070b15
+    );
+}
+
+
+/* EYES */
+
+.eye{
+
+    position:absolute;
+
+    width:14px;
+
+    height:19px;
+
+    top:58px;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    box-shadow:
+    inset 3px 2px 0 white;
+}
+
+.eye-left{
+
+    left:33px;
+}
+
+.eye-right{
+
+    right:33px;
+}
+
+
+/* MOUTH */
+
+.mouth{
+
+    position:absolute;
+
+    width:36px;
+
+    height:18px;
+
+    left:47px;
+
+    bottom:25px;
+
+    border-bottom:
+    4px solid #5b3030;
+
+    border-radius:50%;
+}
+
+
+/* BODY */
+
+.body3d{
+
+    position:absolute;
+
+    width:150px;
+
+    height:120px;
+
+    left:10px;
+
+    top:115px;
+
+    border-radius:
+    35px
+    35px
+    25px
+    25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #5b6fff,
+        #26359c
+    );
+
+    box-shadow:
+    inset -15px -18px 28px #101c7555,
+    15px 25px 35px #0006;
+
+    transform:
+    translateZ(20px);
+}
+
+
+/* LOGO */
+
+.character-logo{
+
+    position:absolute;
+
+    width:68px;
+
+    height:38px;
+
+    left:41px;
+
+    top:37px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    color:#2737a7;
+
+    border-radius:10px;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    box-shadow:
+    0 6px 15px #0004;
+}
+
+
+/* HANDS */
+
+.hand{
+
+    position:absolute;
+
+    width:34px;
+
+    height:90px;
+
+    top:125px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #5b6fff,
+        #26359c
+    );
+
+    box-shadow:
+    inset -8px -8px 15px #101c7555;
+}
+
+.hand-left{
+
+    left:-17px;
+
+    transform:
+    rotate(25deg);
+
+    animation:
+    handLeft 2.5s
+    ease-in-out
+    infinite;
+}
+
+.hand-right{
+
+    right:-17px;
+
+    transform:
+    rotate(-25deg);
+
+    animation:
+    handRight 2.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes handLeft{
+
+    0%,100%{
+        transform:rotate(25deg);
+    }
+
+    50%{
+        transform:rotate(5deg);
+    }
+}
+
+@keyframes handRight{
+
+    0%,100%{
+        transform:rotate(-25deg);
+    }
+
+    50%{
+        transform:rotate(-5deg);
+    }
+}
+
+
+/* LEGS */
+
+.leg{
+
+    position:absolute;
+
+    width:43px;
+
+    height:78px;
+
+    top:230px;
+
+    border-radius:
+    0
+    0
+    20px
+    20px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #34416d,
+        #11182e
+    );
+}
+
+.leg-left{
+
+    left:34px;
+}
+
+.leg-right{
+
+    right:34px;
+}
+
+
+/* PLATFORM */
+
+.platform{
+
+    position:absolute;
+
+    width:290px;
+
+    height:82px;
+
+    bottom:38px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00f5c8,
+        #4055ff
+    );
+
+    transform:
+    rotateX(65deg);
+
+    box-shadow:
+    0 35px 60px #00f5c844;
+
+    animation:
+    platformAnimation
+    3s
+    infinite
+    alternate;
+}
+
+@keyframes platformAnimation{
+
+    from{
+
+        transform:
+        rotateX(65deg)
+        scale(.9);
+    }
+
+    to{
+
+        transform:
+        rotateX(65deg)
+        scale(1.08);
+    }
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .section{
+
+    position:relative;
+
+    z-index:2;
+
     max-width:1250px;
+
     margin:auto;
-    padding:50px 20px;
+
+    padding:
+    80px 20px;
 }
 
 .section-title{
-    display:flex;
-    align-items:end;
-    justify-content:space-between;
-    margin-bottom:25px;
-    gap:20px;
+
+    text-align:center;
+
+    margin-bottom:30px;
 }
 
 .section-title h2{
-    font-size:31px;
+
+    font-size:35px;
+
+    margin-bottom:10px;
 }
 
 .section-title p{
+
     color:#8f9caf;
 }
 
+
+/* CONTROLS */
+
 .controls{
+
     display:flex;
+
     gap:12px;
+
     margin-bottom:30px;
+
     flex-wrap:wrap;
 }
 
 .search{
+
     flex:1;
+
     min-width:220px;
+
     padding:15px 18px;
+
+    border:
+    1px solid #ffffff18;
+
     border-radius:14px;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(255,255,255,.07);
-    color:white;
+
     outline:none;
+
+    background:#ffffff09;
+
+    color:white;
 }
 
 .search::placeholder{
+
     color:#8994a7;
 }
 
 .filter{
+
     padding:14px 18px;
+
+    border:
+    1px solid #ffffff18;
+
     border-radius:14px;
-    border:1px solid rgba(255,255,255,.1);
-    background:#131f34;
+
+    background:#111c31;
+
     color:white;
+
+    outline:none;
 }
 
+
+/* PRODUCTS GRID */
+
 .products{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,1fr);
+
     gap:20px;
 }
 
+
+/* PRODUCT CARD */
+
 .card{
-    background:rgba(255,255,255,.065);
-    border:1px solid rgba(255,255,255,.1);
+
+    background:
+    rgba(255,255,255,.055);
+
+    border:
+    1px solid rgba(255,255,255,.09);
+
     border-radius:22px;
+
     overflow:hidden;
-    position:relative;
-    transition:.35s;
-    backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(12px);
+
+    transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:rgba(56,232,192,.4);
-    box-shadow:0 25px 50px rgba(0,0,0,.25);
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    #00f5c855;
+
+    box-shadow:
+    0 25px 50px #0005;
 }
 
-.product-img{
+
+/* PRODUCT IMAGE */
+
+.product-image{
+
     height:220px;
-    background:#f4f6f8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+    background:#f3f5f7;
+
     overflow:hidden;
 }
 
-.product-img img{
+.product-image img{
+
     width:100%;
+
     height:100%;
-    object-fit:contain;
+
+    object-fit:cover;
+
     transition:.5s;
 }
 
-.card:hover .product-img img{
+.card:hover
+.product-image img{
+
     transform:scale(1.08);
 }
 
+
+/* PRODUCT INFO */
+
 .info{
+
     padding:18px;
 }
 
 .tag{
+
     display:inline-block;
-    background:rgba(56,232,192,.12);
-    color:#38e8c0;
-    border-radius:20px;
+
+    color:#00f5c8;
+
+    background:#00f5c811;
+
     padding:6px 10px;
+
+    border-radius:20px;
+
     font-size:11px;
+
     margin-bottom:10px;
 }
 
 .info h3{
+
+    margin-bottom:10px;
+
     font-size:17px;
-    margin-bottom:9px;
 }
 
-.description{
-    color:#9da8ba;
+.info p{
+
+    color:#9ca7b9;
+
     font-size:13px;
+
     line-height:1.8;
-    height:45px;
+
+    min-height:45px;
 }
 
 .rating{
+
     color:#ffd166;
-    margin:10px 0;
-    font-size:14px;
+
+    margin-top:10px;
 }
 
 .price-row{
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
+
+    justify-content:space-between;
+
     margin-top:15px;
 }
 
 .price{
-    font-size:18px;
+
     font-weight:bold;
+
+    color:white;
 }
 
 .price small{
-    font-size:11px;
+
     color:#8994a7;
+
+    font-size:10px;
 }
 
-.add{
+.add-button{
+
+    width:43px;
+
+    height:43px;
+
     border:none;
-    background:#38e8c0;
-    color:#07121d;
-    width:42px;
-    height:42px;
+
     border-radius:13px;
-    font-size:22px;
+
+    background:#00f5c8;
+
+    color:#031018;
+
+    font-size:23px;
+
     cursor:pointer;
-    transition:.2s;
+
+    transition:.25s;
 }
 
-.add:hover{
-    transform:scale(1.1);
+.add-button:hover{
+
+    transform:
+    scale(1.1)
+    rotate(5deg);
 }
 
-/* FEATURES */
+
+/* =========================
+   FEATURES
+========================= */
 
 .features{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
 }
 
 .feature{
-    padding:25px;
-    border-radius:20px;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.08);
+
+    padding:27px;
+
+    border-radius:22px;
+
+    background:#ffffff08;
+
+    border:
+    1px solid #ffffff12;
+
+    transition:.3s;
+}
+
+.feature:hover{
+
+    transform:
+    translateY(-7px);
+
+    border-color:#00f5c844;
 }
 
 .feature-icon{
-    font-size:35px;
+
+    font-size:38px;
+
     margin-bottom:15px;
 }
 
 .feature h3{
-    margin-bottom:8px;
+
+    margin-bottom:10px;
 }
 
 .feature p{
+
     color:#9ca7b9;
-    line-height:1.8;
+
+    line-height:1.9;
+
     font-size:14px;
 }
 
-/* CART */
+
+/* =========================
+   CART PANEL
+========================= */
 
 .cart-panel{
+
     position:fixed;
+
     top:0;
-    left:-400px;
-    width:360px;
+
+    left:-420px;
+
+    width:390px;
+
     max-width:90%;
+
     height:100vh;
-    background:#0c1628;
+
+    background:
+    #0b1528;
+
     z-index:500;
+
     padding:25px;
-    box-shadow:20px 0 50px rgba(0,0,0,.4);
+
+    box-shadow:
+    20px 0 60px #0008;
+
     transition:.4s;
+
+    overflow-y:auto;
 }
 
 .cart-panel.active{
+
     left:0;
 }
 
+.close-cart{
+
+    position:absolute;
+
+    top:18px;
+
+    right:20px;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
 .cart-panel h2{
-    margin-bottom:25px;
+
+    margin:
+    15px 0 25px;
 }
 
 .cart-item{
+
     padding:15px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+    border-bottom:
+    1px solid #ffffff10;
+
+    line-height:2;
 }
 
-.close{
-    position:absolute;
-    right:20px;
-    top:20px;
-    background:none;
+.remove{
+
+    margin-top:5px;
+
+    padding:5px 10px;
+
     border:none;
+
+    border-radius:8px;
+
+    background:#ff526b;
+
     color:white;
-    font-size:25px;
+
     cursor:pointer;
 }
 
 .total{
+
     margin-top:25px;
+
     font-size:20px;
+
     font-weight:bold;
 }
 
 .checkout{
+
     width:100%;
+
     margin-top:20px;
+
     padding:15px;
+
     border:none;
+
     border-radius:14px;
-    background:#38e8c0;
+
+    background:#00f5c8;
+
+    color:#031018;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    margin-top:50px;
-    padding:40px 20px;
-    border-top:1px solid rgba(255,255,255,.08);
+
+    position:relative;
+
+    z-index:2;
+
+    padding:45px 20px;
+
     text-align:center;
-    color:#8994a7;
+
+    color:#7f8a9e;
+
+    border-top:
+    1px solid #ffffff0d;
+
+    line-height:2;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:1000px){
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
 
     .hero{
+
         grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero-content{
+
         text-align:center;
     }
 
     .hero p{
-        margin:auto;
-    }
 
-    .hero-buttons{
-        justify-content:center;
-    }
-}
-
-@media(max-width:600px){
-    .nav-links{
-        display:none;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     .products{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:600px){
+
+    .nav-links{
+
+        display:none;
+    }
+
+    .hero{
+
+        padding-top:40px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+    .hero p{
+
+        font-size:15px;
+    }
+
+    .products{
+
         grid-template-columns:1fr;
     }
 
     .features{
+
         grid-template-columns:1fr;
     }
 
-    .hero{
-        padding-top:40px;
+    .character-area{
+
+        height:400px;
+    }
+
+    .cart-panel{
+
+        width:340px;
     }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- BACKGROUND -->
+
+<div class="light light1"></div>
+
+<div class="light light2"></div>
+
+
+<!-- HEADER -->
+
 <header>
+
 <div class="nav">
 
 <div class="logo">
+
 S.H.<span>L</span>
+
 </div>
+
 
 <div class="nav-links">
-<a href="#home">خانه</a>
-<a href="#products">محصولات</a>
-<a href="#services">خدمات</a>
-<a href="#contact">تماس</a>
+
+<a href="#home">
+خانه
+</a>
+
+<a href="#products">
+محصولات
+</a>
+
+<a href="#services">
+خدمات
+</a>
+
+<a href="#contact">
+تماس
+</a>
+
 </div>
 
-<button class="cart" onclick="openCart()">
-🛒 سبد خرید <span id="cartCount">0</span>
+
+<button
+class="cart-button"
+onclick="openCart()">
+
+🛒 سبد خرید
+<span id="cartCount">0</span>
+
 </button>
 
 </div>
+
 </header>
 
 
-<section class="hero" id="home">
 
-<div>
+<!-- HERO -->
+
+<section
+class="hero"
+id="home">
+
+
+<div class="hero-content">
+
+<div class="badge">
+
+✦ فروشگاه نسل جدید
+
+</div>
+
+
 <h1>
-فروشگاه نسل جدید
+
+خرید آسان،
+
 <br>
-<span>خرید هوشمند</span>
+
+<span>
+تجربه متفاوت
+</span>
+
 </h1>
 
+
 <p>
-یک تجربه مدرن برای فروشگاه‌های زنجیره‌ای؛
-نمایش حرفه‌ای محصولات، جست‌وجوی سریع،
-جزئیات کالا، سبد خرید و طراحی واکنش‌گرا برای موبایل و کامپیوتر.
+
+یک نمونه فروشگاه زنجیره‌ای مدرن با
+طراحی سه‌بعدی، انیمیشن، نمایش محصولات،
+جستجوی سریع و سبد خرید.
+
 </p>
 
-<div class="hero-buttons">
-<button class="btn primary" onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">
+
+<button
+class="shop-button"
+onclick="goProducts()">
+
 مشاهده محصولات
+
+<span class="arrow">
+←
+</span>
+
 </button>
 
-<button class="btn secondary" onclick="openCart()">
-مشاهده سبد خرید
-</button>
-</div>
 </div>
 
 
-<div class="scene">
 
-<div class="platform"></div>
+<!-- 3D CHARACTER -->
 
-<div class="character">
+<div class="character-area">
+
+<div class="character-glow"></div>
+
+
+<div
+class="character"
+id="character">
+
 
 <div class="head">
-<div class="eye left"></div>
-<div class="eye right"></div>
-<div class="smile"></div>
-</div>
 
-<div class="body">
-<div class="arm left"></div>
-<div class="arm right"></div>
-<div class="badge">S.H.L</div>
-</div>
+<div class="hair"></div>
+
+<div class="eye eye-left"></div>
+
+<div class="eye eye-right"></div>
+
+<div class="mouth"></div>
 
 </div>
+
+
+<div class="body3d">
+
+<div class="character-logo">
+
+S.H.L
+
+</div>
+
+</div>
+
+
+<div class="hand hand-left"></div>
+
+<div class="hand hand-right"></div>
+
+
+<div class="leg leg-left"></div>
+
+<div class="leg leg-right"></div>
+
+
+</div>
+
+
+<div class="platform"></div>
 
 </div>
 
 </section>
 
 
-<section class="section" id="products">
+
+<!-- PRODUCTS -->
+
+<section
+class="section"
+id="products">
+
 
 <div class="section-title">
 
-<div>
-<h2>محصولات منتخب</h2>
-<p>نمونه طراحی فروشگاه زنجیره‌ای</p>
-</div>
+<h2>
+محصولات منتخب
+</h2>
+
+<p>
+نمونه محصولات فروشگاه
+</p>
 
 </div>
 
@@ -649,230 +1630,477 @@ id="search"
 placeholder="🔎 جستجوی محصول..."
 oninput="searchProducts()">
 
-<select class="filter" id="category" onchange="filterProducts()">
-<option value="all">همه دسته‌ها</option>
-<option value="tech">کالای دیجیتال</option>
-<option value="home">خانه</option>
-<option value="food">خوراکی</option>
-<option value="fashion">پوشاک</option>
+
+<select
+class="filter"
+id="category"
+onchange="filterProducts()">
+
+<option value="all">
+همه دسته‌ها
+</option>
+
+<option value="tech">
+کالای دیجیتال
+</option>
+
+<option value="fashion">
+پوشاک
+</option>
+
+<option value="food">
+خوراکی
+</option>
+
+<option value="home">
+خانه
+</option>
+
 </select>
 
 </div>
 
 
-<div class="products" id="productList">
+
+<div
+class="products"
+id="productList">
+
 
 <!-- PRODUCT 1 -->
 
-<div class="card" data-category="tech" data-name="هدفون بی سیم">
+<div
+class="card"
+data-name="هدفون بی سیم"
+data-category="tech">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
+alt="هدفون">
+
 </div>
 
 <div class="info">
 
-<span class="tag">کالای دیجیتال</span>
+<span class="tag">
+کالای دیجیتال
+</span>
 
-<h3>هدفون بی‌سیم حرفه‌ای</h3>
+<h3>
+هدفون بی‌سیم
+</h3>
 
-<p class="description">
-صدای شفاف، طراحی راحت و مناسب استفاده روزانه.
+<p>
+طراحی مدرن با صدای باکیفیت برای استفاده روزمره.
 </p>
 
-<div class="rating">★★★★★ 4.8</div>
+<div class="rating">
+★★★★★ 4.8
+</div>
 
 <div class="price-row">
-<div class="price">۳,۹۹۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('هدفون بی‌سیم',3990000)">+</button>
+
+<div class="price">
+
+۳,۹۹۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('هدفون بی‌سیم',3990000)">
+
++
+
+</button>
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- PRODUCT 2 -->
 
-<div class="card" data-category="tech" data-name="ساعت هوشمند">
+<div
+class="card"
+data-name="ساعت هوشمند"
+data-category="tech">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
+alt="ساعت">
+
 </div>
 
 <div class="info">
 
-<span class="tag">کالای دیجیتال</span>
+<span class="tag">
+کالای دیجیتال
+</span>
 
-<h3>ساعت هوشمند</h3>
+<h3>
+ساعت هوشمند
+</h3>
 
-<p class="description">
-طراحی مدرن با نمایشگر باکیفیت و امکانات هوشمند.
+<p>
+ساعت مدرن مناسب استفاده روزانه.
 </p>
 
-<div class="rating">★★★★★ 4.7</div>
+<div class="rating">
+★★★★★ 4.7
+</div>
 
 <div class="price-row">
-<div class="price">۵,۴۹۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('ساعت هوشمند',5490000)">+</button>
+
+<div class="price">
+
+۵,۴۹۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('ساعت هوشمند',5490000)">
+
++
+
+</button>
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- PRODUCT 3 -->
 
-<div class="card" data-category="home" data-name="دوربین">
+<div
+class="card"
+data-name="کفش ورزشی"
+data-category="fashion">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+alt="کفش">
+
 </div>
 
 <div class="info">
 
-<span class="tag">لوازم خانه</span>
+<span class="tag">
+پوشاک
+</span>
 
-<h3>دوربین دیجیتال</h3>
+<h3>
+کفش ورزشی
+</h3>
 
-<p class="description">
-دوربین مناسب تولید محتوا و ثبت تصاویر باکیفیت.
+<p>
+طراحی سبک برای استفاده روزمره.
 </p>
 
-<div class="rating">★★★★☆ 4.6</div>
+<div class="rating">
+★★★★★ 4.9
+</div>
 
 <div class="price-row">
-<div class="price">۲۴,۹۰۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('دوربین دیجیتال',24900000)">+</button>
+
+<div class="price">
+
+۳,۲۹۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('کفش ورزشی',3290000)">
+
++
+
+</button>
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- PRODUCT 4 -->
 
-<div class="card" data-category="fashion" data-name="کفش ورزشی">
+<div
+class="card"
+data-name="قهوه تازه"
+data-category="food">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+alt="قهوه">
+
 </div>
 
 <div class="info">
 
-<span class="tag">پوشاک</span>
+<span class="tag">
+خوراکی
+</span>
 
-<h3>کفش ورزشی</h3>
+<h3>
+قهوه تازه
+</h3>
 
-<p class="description">
-طراحی سبک و مناسب استفاده روزمره و ورزشی.
+<p>
+قهوه تازه با عطر و طعم مناسب.
 </p>
 
-<div class="rating">★★★★★ 4.9</div>
+<div class="rating">
+★★★★★ 4.8
+</div>
 
 <div class="price-row">
-<div class="price">۳,۲۹۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('کفش ورزشی',3290000)">+</button>
+
+<div class="price">
+
+۴۹۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('قهوه تازه',490000)">
+
++
+
+</button>
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- PRODUCT 5 -->
 
-<div class="card" data-category="food" data-name="قهوه">
+<div
+class="card"
+data-name="عینک آفتابی"
+data-category="fashion">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
+alt="عینک">
+
 </div>
 
 <div class="info">
 
-<span class="tag">خوراکی</span>
+<span class="tag">
+اکسسوری
+</span>
 
-<h3>قهوه تازه</h3>
+<h3>
+عینک آفتابی
+</h3>
 
-<p class="description">
-قهوه تازه‌برشت با عطر و طعم مناسب برای مصرف روزانه.
+<p>
+طراحی مدرن مناسب استفاده روزانه.
 </p>
 
-<div class="rating">★★★★★ 4.8</div>
+<div class="rating">
+★★★★☆ 4.5
+</div>
 
 <div class="price-row">
-<div class="price">۴۹۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('قهوه تازه',490000)">+</button>
+
+<div class="price">
+
+۱,۸۹۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('عینک آفتابی',1890000)">
+
++
+
+</button>
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- PRODUCT 6 -->
 
-<div class="card" data-category="home" data-name="عینک">
+<div
+class="card"
+data-name="دوربین دیجیتال"
+data-category="tech">
 
-<div class="product-img">
-<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85">
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85"
+alt="دوربین">
+
 </div>
 
 <div class="info">
 
-<span class="tag">اکسسوری</span>
+<span class="tag">
+کالای دیجیتال
+</span>
 
-<h3>عینک آفتابی</h3>
+<h3>
+دوربین دیجیتال
+</h3>
 
-<p class="description">
-فریم مدرن با طراحی مناسب استفاده روزانه.
+<p>
+دوربین مناسب تولید محتوا و عکاسی.
 </p>
 
-<div class="rating">★★★★☆ 4.5</div>
+<div class="rating">
+★★★★☆ 4.6
+</div>
 
 <div class="price-row">
-<div class="price">۱,۸۹۰,۰۰۰ <small>تومان</small></div>
-<button class="add" onclick="addToCart('عینک آفتابی',1890000)">+</button>
+
+<div class="price">
+
+۲۴,۹۰۰,۰۰۰
+<small>
+تومان
+</small>
+
+</div>
+
+<button
+class="add-button"
+onclick="addToCart('دوربین دیجیتال',24900000)">
+
++
+
+</button>
+
 </div>
 
 </div>
-</div>
-
 
 </div>
+
+</div>
+
 </section>
 
 
-<section class="section" id="services">
+
+<!-- FEATURES -->
+
+<section
+class="section"
+id="services">
 
 <div class="section-title">
-<div>
-<h2>چرا این فروشگاه؟</h2>
-<p>بخش‌هایی که برای ارائه نمونه پروژه طراحی شده‌اند</p>
+
+<h2>
+امکانات فروشگاه
+</h2>
+
+<p>
+نمونه امکانات قابل ارائه به مشتری
+</p>
+
 </div>
-</div>
+
 
 <div class="features">
 
-<div class="feature">
-<div class="feature-icon">⚡</div>
-<h3>سرعت بالا</h3>
-<p>
-طراحی سبک و واکنش‌گرا برای موبایل، تبلت و کامپیوتر.
-</p>
-</div>
 
 <div class="feature">
-<div class="feature-icon">🔎</div>
-<h3>جستجوی هوشمند</h3>
-<p>
-کاربر می‌تواند محصولات را سریع پیدا و بر اساس دسته‌بندی مرتب کند.
-</p>
+
+<div class="feature-icon">
+⚡
 </div>
 
-<div class="feature">
-<div class="feature-icon">🛒</div>
-<h3>سبد خرید</h3>
+<h3>
+سرعت بالا
+</h3>
+
 <p>
-افزودن محصولات به سبد خرید و محاسبه مجموع سفارش به‌صورت لحظه‌ای.
+طراحی واکنش‌گرا برای موبایل، تبلت و کامپیوتر.
 </p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🔎
+</div>
+
+<h3>
+جستجوی محصول
+</h3>
+
+<p>
+کاربر می‌تواند محصولات موردنظر خود را سریع پیدا کند.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🛒
+</div>
+
+<h3>
+سبد خرید
+</h3>
+
+<p>
+افزودن و حذف محصول و محاسبه مجموع خرید به‌صورت لحظه‌ای.
+</p>
+
 </div>
 
 </div>
@@ -880,42 +2108,89 @@ oninput="searchProducts()">
 </section>
 
 
+
+<!-- FOOTER -->
+
 <footer id="contact">
-S.H.L Market © 2026
-<br><br>
-نمونه اولیه طراحی فروشگاه زنجیره‌ای
+
+<strong>
+S.H.L Market
+</strong>
+
+<br>
+
+نمونه طراحی فروشگاه زنجیره‌ای
+
+<br>
+
+© 2026
+
 </footer>
+
 
 
 <!-- CART -->
 
-<div class="cart-panel" id="cartPanel">
+<div
+class="cart-panel"
+id="cartPanel">
 
-<button class="close" onclick="closeCart()">×</button>
 
-<h2>🛒 سبد خرید</h2>
+<button
+class="close-cart"
+onclick="closeCart()">
+
+×
+
+</button>
+
+
+<h2>
+🛒 سبد خرید
+</h2>
+
 
 <div id="cartItems">
+
 سبد خرید خالی است.
+
 </div>
+
 
 <div class="total">
+
 مجموع:
-<span id="total">۰</span>
+<span id="total">
+۰
+</span>
+
 تومان
+
 </div>
 
-<button class="checkout" onclick="checkout()">
+
+<button
+class="checkout"
+onclick="checkout()">
+
 ادامه ثبت سفارش
+
 </button>
 
 </div>
 
 
+
 <script>
 
+/* =========================
+   CART
+========================= */
+
 let cart=[];
+
 let total=0;
+
 
 function addToCart(name,price){
 
@@ -924,116 +2199,178 @@ function addToCart(name,price){
         price:price
     });
 
-    total += price;
+    total+=price;
 
-    document.getElementById("cartCount").innerText=cart.length;
+    document.getElementById(
+        "cartCount"
+    ).innerText=cart.length;
 
     renderCart();
 
-    document.getElementById("cartPanel").classList.add("active");
+    openCart();
 }
 
 
 function renderCart(){
 
-    const box=document.getElementById("cartItems");
+    const box=
+    document.getElementById(
+        "cartItems"
+    );
 
     if(cart.length===0){
-        box.innerHTML="سبد خرید خالی است.";
-        return;
+
+        box.innerHTML=
+        "سبد خرید خالی است.";
+
+    }else{
+
+        box.innerHTML="";
+
+        cart.forEach(
+            (item,index)=>{
+
+            const div=
+            document.createElement(
+                "div"
+            );
+
+            div.className=
+            "cart-item";
+
+            div.innerHTML=`
+
+            <strong>
+            ${item.name}
+            </strong>
+
+            <br>
+
+            ${item.price.toLocaleString("fa-IR")}
+            تومان
+
+            <br>
+
+            <button
+            class="remove"
+            onclick="removeItem(${index})">
+
+            حذف
+
+            </button>
+
+            `;
+
+            box.appendChild(div);
+
+        });
     }
 
-    box.innerHTML="";
-
-    cart.forEach((item,index)=>{
-
-        const div=document.createElement("div");
-
-        div.className="cart-item";
-
-        div.innerHTML=`
-        <strong>${item.name}</strong>
-        <br>
-        <span>${item.price.toLocaleString("fa-IR")} تومان</span>
-        <br>
-        <button
-        onclick="removeItem(${index})"
-        style="margin-top:8px;background:#ff5d73;color:white;border:0;padding:6px 10px;border-radius:8px;cursor:pointer">
-        حذف
-        </button>
-        `;
-
-        box.appendChild(div);
-
-    });
-
-    document.getElementById("total").innerText=
-        total.toLocaleString("fa-IR");
+    document.getElementById(
+        "total"
+    ).innerText=
+    total.toLocaleString("fa-IR");
 }
 
 
 function removeItem(index){
 
-    total -= cart[index].price;
+    total-=cart[index].price;
 
     cart.splice(index,1);
 
-    document.getElementById("cartCount").innerText=cart.length;
+    document.getElementById(
+        "cartCount"
+    ).innerText=cart.length;
 
     renderCart();
 }
 
 
 function openCart(){
-    document.getElementById("cartPanel").classList.add("active");
+
+    document.getElementById(
+        "cartPanel"
+    ).classList.add("active");
 }
 
 
 function closeCart(){
-    document.getElementById("cartPanel").classList.remove("active");
+
+    document.getElementById(
+        "cartPanel"
+    ).classList.remove("active");
 }
 
 
 function checkout(){
 
     if(cart.length===0){
-        alert("سبد خرید شما خالی است.");
+
+        alert(
+            "سبد خرید شما خالی است."
+        );
+
         return;
     }
 
     alert(
-        "این نسخه نمایشی است.\n\n" +
-        "در نسخه واقعی می‌توان درگاه پرداخت، حساب کاربری، آدرس و ثبت سفارش را اضافه کرد."
+        "این نسخه نمایشی است.\n\n"+
+        "در نسخه واقعی می‌توان "+
+        "درگاه پرداخت، آدرس و ثبت سفارش "+
+        "را اضافه کرد."
     );
 }
 
 
+/* =========================
+   PRODUCT SEARCH
+========================= */
+
 function searchProducts(){
 
     const value=
-        document.getElementById("search").value.toLowerCase();
+    document.getElementById(
+        "search"
+    ).value
+    .toLowerCase()
+    .trim();
 
-    document.querySelectorAll(".card").forEach(card=>{
+    document.querySelectorAll(
+        ".card"
+    ).forEach(card=>{
 
         const name=
-            card.dataset.name.toLowerCase();
+        card.dataset.name
+        .toLowerCase();
 
         card.style.display=
-            name.includes(value) ? "" : "none";
-
+        name.includes(value)
+        ? ""
+        : "none";
     });
 }
 
 
+/* =========================
+   FILTER
+========================= */
+
 function filterProducts(){
 
     const value=
-        document.getElementById("category").value;
+    document.getElementById(
+        "category"
+    ).value;
 
-    document.querySelectorAll(".card").forEach(card=>{
+    document.querySelectorAll(
+        ".card"
+    ).forEach(card=>{
 
-        if(value==="all" ||
-           card.dataset.category===value){
+        if(
+            value==="all" ||
+            card.dataset.category===value
+        ){
 
             card.style.display="";
 
@@ -1046,7 +2383,97 @@ function filterProducts(){
     });
 }
 
+
+/* =========================
+   SCROLL BUTTON
+========================= */
+
+function goProducts(){
+
+    document.getElementById(
+        "products"
+    ).scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+}
+
+
+/* =========================
+   3D CHARACTER MOUSE
+========================= */
+
+const character=
+document.getElementById(
+    "character"
+);
+
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        if(!character)
+        return;
+
+        const x=
+        (
+            window.innerWidth/2
+            -
+            e.clientX
+        )/35;
+
+        const y=
+        (
+            window.innerHeight/2
+            -
+            e.clientY
+        )/70;
+
+        character.style.transform=
+        `
+        translateY(-10px)
+        rotateY(${x}deg)
+        rotateX(${y}deg)
+        `;
+
+    }
+);
+
+
+/* =========================
+   MOBILE TOUCH
+========================= */
+
+document.addEventListener(
+    "touchmove",
+    function(e){
+
+        if(!character)
+        return;
+
+        const touch=
+        e.touches[0];
+
+        const x=
+        (
+            window.innerWidth/2
+            -
+            touch.clientX
+        )/45;
+
+        character.style.transform=
+        `
+        translateY(-10px)
+        rotateY(${x}deg)
+        `;
+
+    }
+);
+
 </script>
 
 </body>
+
 </html>
